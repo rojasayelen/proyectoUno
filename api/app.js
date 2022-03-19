@@ -6,6 +6,7 @@ var cors = require('cors');
 
 
 var app = express();
+app.use(express.json()); //a pedido del frontend
 app.use(cors());
 
 
