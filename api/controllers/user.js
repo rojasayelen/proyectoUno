@@ -1,7 +1,7 @@
 'use strict'
 var bcrypt = require('bcrypt');
 var User = require('../models/user');
-const saltRounds = 5;
+const saltRounds = 10;
 var jwt = require('../services/jwt');
 var fs = require('fs');
 var path = require('path');
@@ -24,6 +24,7 @@ function saveUser(req, res) {
        
         bcrypt.hash(params.password, saltRounds, function(err, hash){
            user.password = hash;
+
             if(user.name != null && user.surname != null && user.email != null){
                 // guardar el usuario
                 user.save((err, userStored) =>{
@@ -43,8 +44,9 @@ function saveUser(req, res) {
             }
         })
     }else{
-        res.status(200).send({message:'debe ingresar contraseña'})  
-    };
+      
+        res.status(200).send({message:'debe ingresar contraseña'})
+    }
 };
 
 function loginUser(req, res){
