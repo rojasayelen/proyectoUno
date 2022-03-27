@@ -17,7 +17,7 @@ function saveUser(req, res) {
     user.name = params.name;
     user.surname = params.surname;
     user.email = params.email;
-    user.role = 'ROLE_USER';
+    user.role = params.role;
     
     if(params.password){
         //encripta contraseña 
@@ -80,6 +80,11 @@ function loginUser(req, res){
             }
         }
     });
+}
+
+function deleteUser(req, res){
+    var params = req.body;
+    
 }
 
 module.exports = {

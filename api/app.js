@@ -2,6 +2,8 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var createRoles = require('./libs/initialSetup');
+
 //var cors = require('cors');
 
 
