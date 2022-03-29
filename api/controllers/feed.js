@@ -4,7 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var Feed = require('../models/feed');
 var Panel = require('../models/panel');
-var Post = require('../models/post');
+var Post = require('../models/posteo');
 
 function getFeed(req, res){
     res.status(200).send({message: 'probando el controlador de feed'});

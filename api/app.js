@@ -14,8 +14,8 @@ var app = express();
 
 //cargar rutas
 var user_routes = require('./routes/user');
-//var feed_routes = require('./routes/feed');
-var post_routes = require('./routes/post');
+var feed_routes = require('./routes/feed');
+var posteo_routes = require('./routes/posteo');
 
 //configuración del body-parser
 app.use(bodyParser.urlencoded({extended:true}));
@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 //rutas base    
 //estoy utilizando un middleware 
 app.use('/api', user_routes);
-//app.use('/api', feed_routes); 
-app.use('/api', post_routes);
+app.use('/api', feed_routes); 
+app.use('/api', posteo_routes);
 
 
 
